@@ -123,3 +123,21 @@ for shuffled_list in shuffled_lists:
 for result in results:
     print(result)
 ##########################        
+def fib(n, cache=None):
+    if cache is None:
+        cache = {}
+    # Base case
+    if n <= 2:
+        return 1
+    elif n in cache:
+        return cache[n]
+    else:
+        answer = fib(n-1, cache) + fib(n-2, cache)
+        cache[n] = answer
+        # Recursive call, should move toward base case
+        return answer
+#######################
+
+# What is time and space complexity?
+# the way time and space requirements scale with input size
+###########################
